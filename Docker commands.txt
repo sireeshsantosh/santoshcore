@@ -1,0 +1,49 @@
+docker commands
+
+
+1. Docker image -- will display all docker images
+2. docker ps --- it will show all running containers
+3. docker ps -a -- it will show all containers (running and stopped)
+4. docker pull image ID -- to pull the image from docker hub
+5. docker version -- to show the version running on ubuntu
+6. docker run -it -p 80:80 nginx /bin/bash -- it will used to run the container
+7. docker exec -it container ID (from docker ps) bash --- it will used to enter into the container
+8. docker stop container ID -- stop the container
+9. docker rm containser ID -- to remove the container
+10. docker commit container ID repositoty name/newname -- it will used to modify the already existing image and commit
+the changes
+11. docker push repository name/new name -- move the new image to docker hub
+12. docker login --used to login into dockerhub
+13. docker inspect containser ID -- to get the complete information about container
+14. docker ps -aq -- to get only container ID's
+15. docker stop $(docker ps -aq) -- to stop all containers at the same time
+16. docker rm $(docker ps -aq) -- to remove all containers at the same time
+17. docker run --rm -it --name=ubuntu192 --network=network192 -p 8080:80 repository name/new name bash -- here -rm is used
+when ever we exit from the container, it will automatically removed
+
+If the data is stored in the container is temparory. that means when container is deleted. it is automatically removed
+
+to avoid this we are using docker volumes concept
+
+18. docker volume ls - to check all volumes
+19 docker volume create testvol1 (valume name)
+
+when we check docker valume inspect volume name, it will show mountpoint. it is the location where the data is stored
+
+20. To create network : docker network create --driver=bridge --subnet=192.168.0.0/16 network192 (name we can give anything)
+
+
+21. When ever the developer devolop the code, they will crete one folder. we need to create a docker file and 
+write the command like
+nano Docker file and copy the developers code into it, whenever we use build command, it will create image
+
+Docker build command : docker build -t ubuntu:v2 (name)
+
+
+Docker file commands
+
+From : 
+Run :
+CMD :
+ENTRY POINT : whenever containser start by using image from where it should start. in the above example
+docker run -it -p 80:80 nginx /bin/bash. Here bash is an entry point

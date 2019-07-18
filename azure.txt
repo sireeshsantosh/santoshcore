@@ -1,0 +1,123 @@
+cloud computing provides the services
+
+IAAS (Infrastructure as a service)
+SAAS (Software as a service)
+PAAS (Platform as a service)
+
+IAAS: The complete infrascture wil provide by third party vendor.
+the servers, they will scale out and reduce the servers based on the requirement
+
+SAAS : it will provide you the capablility of deploye your applications or softwares over the cloud
+and the end user can able to use this applications
+
+PAAS: Developers required different tools, different hardwared and different languages. this PAAS will provide you
+different infrastructure, tools and languages to develop your own applications
+
+
+Deployment methods in cloud
+
+Public
+private
+hybrid
+
+Public: everything that will be deployed as a service that will be deployed by third party vendor provider
+
+
+
+Docker:
+
+Docker is used to create containers
+
+When we are using vertualisation. each server will have hardware resources an physical os. we will create seperate vm's to work
+with this application.
+One vm is used for one application. in that cased, there is so much of space and memories waste
+
+Docker creates the container, which is having the binary and library files and remaining files are sharing from host OS.
+there is no separate OS for each container.
+
+Kubernetes:
+
+Suppose if we have more number of container in our OS. it is difficult to monitor each container whether it is working
+file or not or which container using more resources like that
+
+In that case kubernetes was introduced. it is orchestation container tool. its job is to monitor, scale and restart the
+containers
+
+
+kubernetes works like
+
+we have kubernetes master and kubernetes nodes
+
+K master is used to schedule the containers with in the nodes. k master take resposibility of monitor, scale up and down the
+containers
+
+where as K nodes will process the requests in container and API's etc..
+
+
+Kubernetes commands
+
+To check all the nodes present in cluster
+
+Kubetcl get nodes
+
+To check all prods present in the cluster
+
+Kubectl get pods --all-namespace
+
+To check all prods present in the cluster along with location
+
+Kubectl get pod -all-namespace -o wide
+
+The IP address only valid inside cluster
+
+
+To create deployment 
+
+Kubectl create deployment ngninx1 --image=nginx:1.7.9
+
+To create deployement through file
+
+Kubectl create -f deployment deploy.yaml
+
+To create services 
+
+kubectl  create service nodeport nginx --tcp 80:80 (nginx will run on 80 port)
+
+Refer youtube
+
+Intellipaat
+
+
+Azure devops housemm dellai
+
+
+
+Azure functions:
+
+Azure function is a solution to execute a piece of code in the cloud. you can write just a code for the problem no need to 
+worry about whole application or infrastructure to run it.This is also called serverless compute solution. This support varies languages C#, F#, Java, Javascript
+we can pay when the time the code runs. 
+
+
+HTTP Trigger : Trigger the execution of code by using http request
+
+
+Azure storage:
+
+Azure storage is microsoft managed service providing cloud storage. it is highly available, secure, scalable and redundent
+
+Azure storage divided into 4 types
+
+Blob storage (Binary large object):
+
+It is used to store unstructured data. i.e audio file, vedio files, binary data, text files, images
+
+
+Queue storage:
+
+Azure queue is cloud based storage, that enables the communication between distributed applications. Each queue maintain the
+list of messages that is added by sender component and processed by receiver component
+
+with this queue, your application is immediately scalable based on the demand
+
+
